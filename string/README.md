@@ -49,3 +49,12 @@ string str("all   the king        horses");
 remove_double_spaces(str);
 cout << str << endl; // "all the king horses"
 ```
+
+### join
+
+Join a vector of strings on a given separator.
+
+```c++
+cout << join(vector<string>{"all", "the", "king", "horses"}, " ") << endl;
+// all the king horses
+```

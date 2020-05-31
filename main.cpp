@@ -36,6 +36,11 @@ int main() {
     remove_double_spaces(str);
     cout << "\t" << str << endl; // "all the king horses"
 
+    cout << "\njoin\n" << endl;
+
+    cout << "\t";
+    cout << join(vector<string>{"all", "the", "king", "horses"}, " ") << endl;
+
     return 0;
 }
 
