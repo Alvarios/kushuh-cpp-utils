@@ -7,12 +7,12 @@ vector<string> split(const string& str, char delimiter) {
     vector<string> output;
 
     stringstream ss(str); // Turn the string into a stream.
-    string tok;
+    string sequence;
 
     // While a new sequence was found.
-    while(getline(ss, tok, delimiter)) {
-        if (!tok.empty()) {
-            output.push_back(tok);
+    while(getline(ss, sequence, delimiter)) {
+        if (!sequence.empty()) {
+            output.push_back(sequence);
         }
     }
 
@@ -30,3 +30,38 @@ vector<string> split(const string& str) {
 
     return output;
 }
+
+
+void Splitter::init(const string& corpus, int const& limit) {
+    c_corpus = corpus;
+    c_limit = limit;
+
+    ss = stringstream(corpus);
+}
+
+void Splitter::init(const string& corpus) {
+    c_corpus = corpus;
+
+    c_limit = 25;
+    ss = stringstream(corpus);
+}
+
+vector<string> Splitter::read_block(char delimiter) {
+    vector<string> output;
+
+    if (ss.peek() == EOF) {
+        return output;
+    }
+
+    int counter = 0;
+
+    // While a new sequence was found.
+    while(counter < c_limit && getline(ss, sequence, delimiter)) {
+        if (!sequence.empty()) {
+            counter++;
+            output.push_back(sequence);
+        }
+    }
+
+    return output;
+};

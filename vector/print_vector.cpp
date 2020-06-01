@@ -2,39 +2,86 @@
 
 using namespace std;
 
-void print_vector(vector<string> arg) {
-    cout << "[";
-    for (int i = 0; i < arg.size() - 1; i++) {
-        cout << "\"" << arg[i] << "\", ";
+string print_vector(vector<string> arg) {
+    if (arg.empty()) {
+        return "[]";
     }
 
-    cout << "\"" << arg[arg.size() - 1] << "\"]" << endl;
-}
-
-void print_vector(vector<int> arg) {
-    cout << "[";
+    string output("[");
     for (int i = 0; i < arg.size() - 1; i++) {
-        cout << arg[i] << ", ";
+        output += "\"" + arg[i] + "\", ";
     }
 
-    cout << arg[arg.size() - 1] << "]" << endl;
+    output += "\"" + arg[arg.size() - 1] + "\"]";
+    return output;
 }
 
-void print_vector(vector<char> arg) {
-    cout << "[";
-    for (int i = 0; i < arg.size() - 1; i++) {
-        cout << "\'" << arg[i] << "\', ";
+string print_vector(vector<int> arg) {
+    if (arg.empty()) {
+        return "[]";
     }
 
-    cout << "\'" << arg[arg.size() - 1] << "\']" << endl;
-}
-
-void print_vector(vector<bool> arg) {
-    cout << "[";
+    string output("[");
     for (int i = 0; i < arg.size() - 1; i++) {
-        cout << arg[i] << ", ";
+        output += to_string(arg[i]) + ", ";
     }
 
-    cout << arg[arg.size() - 1] << "]" << endl;
+    output += to_string(arg[arg.size() - 1]) + "]";
+    return output;
 }
 
+string print_vector(vector<char> arg) {
+    if (arg.empty()) {
+        return "[]";
+    }
+
+    string output("[");
+    for (int i = 0; i < arg.size() - 1; i++) {
+        output += "\'" + string(arg[i], 1) + "\', ";
+    }
+
+    output += "\'" + string(arg[arg.size() - 1], 1) + "\']";
+    return output;
+}
+
+string print_vector(vector<bool> arg) {
+    if (arg.empty()) {
+        return "[]";
+    }
+
+    string output("[");
+    for (int i = 0; i < arg.size() - 1; i++) {
+        output += to_string(arg[i]) + ", ";
+    }
+
+    output += to_string(arg[arg.size() - 1]) + "]";
+    return output;
+}
+
+string print_vector(vector<double> arg) {
+    if (arg.empty()) {
+        return "[]";
+    }
+
+    string output("[");
+    for (int i = 0; i < arg.size() - 1; i++) {
+        output += to_string(arg[i]) + ", ";
+    }
+
+    output += to_string(arg[arg.size() - 1]) + "]";
+    return output;
+}
+
+string print_vector(vector<float> arg) {
+    if (arg.empty()) {
+        return "[]";
+    }
+
+    string output("[");
+    for (int i = 0; i < arg.size() - 1; i++) {
+        output += to_string(arg[i]) + ", ";
+    }
+
+    output += to_string(arg[arg.size() - 1]) + "]";
+    return output;
+}

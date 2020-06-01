@@ -4,11 +4,11 @@
 #include <iostream>
 #include <vector>
 
-void print_vector(std::vector<std::string> arg);
-void print_vector(std::vector<int> arg);
-void print_vector(std::vector<bool> arg);
-void print_vector(std::vector<char> arg);
-void print_vector(std::vector<double> arg);
-void print_vector(std::vector<float> arg);
+std::string print_vector(std::vector<std::string> arg);
+std::string print_vector(std::vector<int> arg);
+std::string print_vector(std::vector<bool> arg);
+std::string print_vector(std::vector<char> arg);
+std::string print_vector(std::vector<double> arg);
+std::string print_vector(std::vector<float> arg);
 
 #endif //KUSHUH_CPP_UTILS_PRINT_VECTOR_H

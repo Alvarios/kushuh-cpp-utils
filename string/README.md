@@ -7,13 +7,31 @@ by a specific separator.
 
 ```c++
 vector<string> path = split("all the king horses, and all the king mens", ',');
-print_vector(path);
+cout << print_vector(path) << endl;
 // ["all the king horses", " and all the king mens"]
 
 // No delimiters is equivalent to split by character.
 path = split("all the king horses, and all the king mens");
-print_vector(path);
+cout << print_vector(path) << endl;
 // ["a", "l", "l", ...]
+```
+
+### Splitter
+
+Splitter is a special class to read a long string by custom blocks, instead of loading
+the whole string to memory.
+
+```c++
+Splitter splitter;
+// Second parameter is block length in words. Default is 25.
+splitter.init("all the king horses, and all the king mens", 2);
+
+cout << print_vector(splitter.read_block(' ')) << endl; // ["all", "the"]
+cout << print_vector(splitter.read_block(' ')) << endl; // ["king", "horses,"]
+cout << print_vector(splitter.read_block(' ')) << endl; // ["and", "all"]
+cout << print_vector(splitter.read_block(' ')) << endl; // ["the", "king"]
+cout << print_vector(splitter.read_block(' ')) << endl; // ["mens"]
+cout << print_vector(splitter.read_block(' ')) << endl; // []
 ```
 
 ## find_matches
@@ -24,10 +42,10 @@ index occurrence of s2 in s1.
 For example :
 ```c++
 vector<int> output = find_matches("all the king horses and all the king mens", "all");
-print_vector(output); // [0, 24]
+cout << print_vector(output) << endl; // [0, 24]
 
 output = find_matches("all the king horses and all the king mens", "all", ' ');
-print_vector(output); // [0, 5]
+cout << print_vector(output) << endl; // [0, 5]
 ```
 
 > 💡 Tip : when delimiter is specified, index represent the position in the splitted
