@@ -18,7 +18,7 @@ int main() {
 
     cout << "\nsplitter\n" << endl;
 
-    Splitter splitter;
+    Sequencer splitter;
     splitter.init("all the king horses, and all the king mens", 2);
     cout << print_vector(splitter.read_block(' ')) << endl; // ["all", "the"]
     cout << print_vector(splitter.read_block(' ')) << endl; // ["king", "horses,"]

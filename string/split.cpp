@@ -32,21 +32,21 @@ vector<string> split(const string& str) {
 }
 
 
-void Splitter::init(const string& corpus, int const& limit) {
+void Sequencer::init(const string& corpus, int const& limit) {
     c_corpus = corpus;
     c_limit = limit;
 
     ss = stringstream(corpus);
 }
 
-void Splitter::init(const string& corpus) {
+void Sequencer::init(const string& corpus) {
     c_corpus = corpus;
 
     c_limit = 25;
     ss = stringstream(corpus);
 }
 
-vector<string> Splitter::read_block(char delimiter) {
+vector<string> Sequencer::read_block(char delimiter) {
     vector<string> output;
 
     if (ss.peek() == EOF) {

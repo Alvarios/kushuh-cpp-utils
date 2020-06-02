@@ -16,22 +16,31 @@ cout << print_vector(path) << endl;
 // ["a", "l", "l", ...]
 ```
 
-### Splitter
+### Sequencer
 
-Splitter is a special class to read a long string by custom blocks, instead of loading
+Sequencer is a special class to read a long string by custom blocks, instead of loading
 the whole string to memory.
 
 ```c++
-Splitter splitter;
+Sequencer sequencer;
 // Second parameter is block length in words. Default is 25.
-splitter.init("all the king horses, and all the king mens", 2);
+sequencer.init("all the king horses, and all the king mens", 2);
 
-cout << print_vector(splitter.read_block(' ')) << endl; // ["all", "the"]
-cout << print_vector(splitter.read_block(' ')) << endl; // ["king", "horses,"]
-cout << print_vector(splitter.read_block(' ')) << endl; // ["and", "all"]
-cout << print_vector(splitter.read_block(' ')) << endl; // ["the", "king"]
-cout << print_vector(splitter.read_block(' ')) << endl; // ["mens"]
-cout << print_vector(splitter.read_block(' ')) << endl; // []
+cout << print_vector(sequencer.read_block(' ')) << endl; // ["all", "the"]
+cout << print_vector(sequencer.read_block(' ')) << endl; // ["king", "horses,"]
+cout << print_vector(sequencer.read_block(' ')) << endl; // ["and", "all"]
+cout << print_vector(sequencer.read_block(' ')) << endl; // ["the", "king"]
+cout << print_vector(sequencer.read_block(' ')) << endl; // ["mens"]
+cout << print_vector(sequencer.read_block(' ')) << endl; // []
+
+// Or
+vector<string> sequence = sequencer.read_block(' ');
+
+while (!sequence.empty()) {
+    // Do something with the sequence.
+    
+    sequence = sequencer.read_block(' ');
+}
 ```
 
 ## find_matches

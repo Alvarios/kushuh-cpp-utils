@@ -8,7 +8,7 @@
 std::vector<std::string> split(const std::string& str, char delimiter);
 std::vector<std::string> split(const std::string& str);
 
-class Splitter {
+class Sequencer {
     public:
         void init(const std::string& corpus, int const& limit);
         void init(const std::string& corpus);
