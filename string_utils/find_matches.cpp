@@ -11,7 +11,7 @@ vector<int> find_matches(string const& witness, string const& candidate, char de
     return find_matches(split(witness, delimiter), split(candidate, delimiter));
 }
 
-// List each index in witness that match candidate string.
+// List each index in witness that match candidate string_utils.
 vector<int> find_matches(
     const vector<string> &witness,
     const vector<string> &candidate
@@ -24,7 +24,7 @@ vector<int> find_matches(
 
     // A match occurred before iterator reached the end of witness.
     if (match != end(candidate)) {
-        // List every match in the witness string for post-computation.
+        // List every match in the witness string_utils for post-computation.
         vector<int> matchesOffsets;
 
         // Keep track of last matched index. Matched range returned by search function is relative to begin() value,
@@ -39,13 +39,13 @@ vector<int> find_matches(
             // Add last matched offset to output.
             matchesOffsets.push_back(lastMatchIndex);
 
-            // Perform a new match with the same method as above, except we cut the witness string to last match.
+            // Perform a new match with the same method as above, except we cut the witness string_utils to last match.
             match = search(begin(witness) + lastMatchIndex + 1, end(witness), begin(candidate), end(candidate));
         };
 
         return matchesOffsets;
     } else {
-        // No match returns an empty vector.
+        // No match returns an empty vector_utils.
         return vector<int>();
     }
 }

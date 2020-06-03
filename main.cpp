@@ -1,7 +1,7 @@
-#include "./string/find_matches.h"
-#include "./string/split.h"
-#include "./string/format.h"
-#include "./vector/print_vector.h"
+#include "./string_utils/find_matches.h"
+#include "./string_utils/split.h"
+#include "./string_utils/format.h"
+#include "./vector_utils/print_vector.h"
 
 using namespace std;
 

@@ -2,11 +2,11 @@
 
 using namespace std;
 
-// Convert string into vector of sequences.
+// Convert string_utils into vector_utils of sequences.
 vector<string> split(const string& str, char delimiter) {
     vector<string> output;
 
-    stringstream ss(str); // Turn the string into a stream.
+    stringstream ss(str); // Turn the string_utils into a stream.
     string sequence;
 
     // While a new sequence was found.
